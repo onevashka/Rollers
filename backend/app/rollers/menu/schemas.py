@@ -13,7 +13,7 @@ class SCategory(Base):
     name: Mapped[str] = mapped_column(String, nullable=False)
 
 
-class Product(Base):
+class SProduct(Base):
 
     __tablename__ = 'product'
 
@@ -22,4 +22,5 @@ class Product(Base):
     description: Mapped[str] = mapped_column(String, nullable=False)
     price: Mapped[int] = mapped_column(Integer, nullable=False)
     time_reg: Mapped[datetime] = mapped_column(DateTime, nullable=False, default=datetime.utcnow)
+
     category_id: Mapped[int] = mapped_column(Integer, ForeignKey('category.id'))

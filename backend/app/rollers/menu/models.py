@@ -3,6 +3,7 @@ from pydantic import BaseModel, Field
 
 
 class Category(BaseModel):
+    id: int
     name: str
 
     class Config:
@@ -10,6 +11,7 @@ class Category(BaseModel):
 
 
 class Product(BaseModel):
+    id: int
     name: str
     description: str
     price: float
